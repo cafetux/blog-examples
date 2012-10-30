@@ -15,18 +15,21 @@ public class TimeOutSilencerTest {
 	@Test(expected = IllegalArgumentException.class)
 	@IgnoreTimeout
 	public void test_that_throw_exception_not_silenced() throws Exception {
+		System.out.println("test_that_throw_exception_not_silenced");
 		throw new IllegalArgumentException("je ne veux pas être ignorée !");
 	}
 
 	@Test
 	@IgnoreTimeout
 	public void test_that_throw_timeout_exception() throws Exception {
+		System.out.println("test_that_throw_timeout_exception");
 		throw new TimeoutException("tango charly le server ne répond plus");
 	}
 
 	@Test(expected = TimeoutException.class)
 	public void test_that_throw_timeout_exception_but_not_ignored()
 			throws Exception {
+		System.out.println("test_that_throw_timeout_exception_but_not_ignored");
 		throw new TimeoutException("tango charly le server ne répond plus");
 	}
 
